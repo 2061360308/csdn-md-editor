@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta charset="utf-8">
+    <title>写文章</title>
+    <meta content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1" name="viewport">
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="" name="csrf_token">
+    <meta content="{&quot;spm&quot;:&quot;1015.2103&quot;}" name="report">
+    <link href="css/editor_app.css" rel="stylesheet">
+    <link href="css/google-dark.min.css" rel="stylesheet">
+    <link href="css/editor_app_add.css" rel="stylesheet">
+    <link href="css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="app app--light">
+    <div class="layout">
+        <!--头部-->
+        <div class="layout__panel layout__panel--articletitle-bar"
+             style="width: 100%; height: 56px; overflow: inherit;">
+            <div class="article-bar flex flex--row flex--align-center">
+                <div class="article-bar__link-box">
+                    <a class="btn-goback" style="text-decoration: none;">
+                        <i class="mdi mdi-24px mdi-home-assistant"></i>
+                        管理后台
+                    </a>
+                </div>
+                <div class="article-bar__input-box">
+                    <input class="article-bar__title article-bar__title--input text-input" maxlength="100"
+                           placeholder="请输入文章标题（5~100个字）" value="【无标题】">
+                    <span class="article-bar__number" style="color: #6c757d">
+                        <span class="">5</span>/100</span>
+                    </span>
+                </div> <!---->
+                <div class="article-bar__user-box flex flex--row">
+                    <button id="save_drafts" class="btn btn-save">保存草稿</button>
+                    <button id="publish" class="btn btn-publish">发布文章</button>
+                    <div class="user-box">
+                        <div class="btn-userinfo">
+                            <div class="avatar-box">
+                                <a>
+                                    <img alt="头像" class="img-user-avatar" width="32" height="32"
+                                         src="https://img1.baidu.com/it/u=1525686169,3779342042&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=780">
+                                </a>
+                            </div>
+                            <div class="user-option-box">
+                                <a>博客首页</a>
+                                <a>管理后台</a>
+                                <a>退出</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--主体-->
+        <div class="layout__panel flex flex--row">
+            <div class="layout__panel flex flex--column" tour-step-anchor="welcome,end">
+                <div class="layout__panel layout__panel--navigation-bar clearfix" style="height: 74px;">
+                    <nav class="navigation-bar clearfix navigation-bar--editor">
+                        <div class="scroll-box">
+                            <div class="navigation-bar__inner navigation-bar__inner--edit-pagedownButtons">
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_bold">
+                                        <i class="mdi mdi-36px mdi-format-bold"></i>
+                                        加粗
+                                    </button>
+                                </div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_italic">
+                                        <i class="mdi mdi-36px mdi-format-italic"></i>
+                                        斜体
+                                    </button>
+                                </div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_title">
+                                        <i class="mdi mdi-36px mdi-format-header-pound"></i>标题
+                                    </button>
+                                </div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_strikethrough">
+                                        <i class="mdi mdi-24px mdi-format-strikethrough-variant"></i>删除线
+                                    </button>
+                                </div>
+                                <div class="navigation_bar_split_line"></div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_disorder">
+                                        <i class="mdi mdi-24px mdi-format-list-bulleted"></i>无序
+                                    </button>
+                                </div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_order">
+                                        <i class="mdi mdi-24px mdi-format-list-numbers"></i>有序
+                                    </button>
+                                </div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_todo">
+                                        <i class="mdi mdi-24px mdi-format-list-checks"></i>待办
+                                    </button>
+                                </div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_quote">
+                                        <i class="mdi mdi-24px mdi-format-quote-open"></i>引用
+                                    </button>
+                                </div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_code">
+                                        <i class="mdi mdi-24px mdi-xml"></i>代码块
+                                    </button>
+                                </div>
+                                <div class="navigation_bar_split_line"></div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_pic">
+                                        <i class="mdi mdi-24px mdi-file-image"></i>
+                                        图片
+                                    </button>
+                                </div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_video">
+                                        <i class="mdi mdi-24px mdi-video"></i>
+                                        视频
+                                    </button>
+                                </div>
+                                <div class="navigation_bar_split_line"></div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_table">
+                                        <i class="mdi mdi-24px mdi-table-large"></i>
+                                        表格
+                                    </button>
+                                </div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_link">
+                                        <i class="mdi mdi-24px mdi-link-variant"></i>
+                                        超链接
+                                    </button>
+                                </div>
+                                <div class="navigation_bar_split_line"></div>
+                                <div class="navigation-bar__button_box">
+                                    <input accept=".md" class="hidden-file" id="import-markdown-file-input" type="file">
+                                    <label class="navigation-bar__button button clearfix label" data-title="导入"
+                                           for="import-markdown-file-input">
+                                        <i class="mdi mdi-24px mdi-call-received"></i>
+                                        导入
+                                    </label></div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_export">
+                                        <i class="mdi mdi-24px mdi-call-made"></i>
+                                        导出
+                                    </button>
+                                </div>
+                                <div class="navigation_bar_split_line"></div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button button-save hasChg" id="button_save">
+                                        <i class="mdi mdi-24px mdi-content-save"></i>
+                                        保存
+                                    </button>
+                                </div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" id="button_undo">
+                                        <i class="mdi mdi-24px mdi-restart"></i>
+                                        撤销
+                                    </button>
+                                </div>
+                                <div class="navigation-bar__button_box">
+                                    <button class="navigation-bar__button button clearfix" disabled="disabled"
+                                            id="button_redo">
+                                        <i class="mdi mdi-24px mdi-refresh"></i>
+                                        重做
+                                    </button>
+                                </div> <!---->
+                                <div class="navigation_bar_split_line"></div>
+                                <div class="navigation-bar__button_box" style="position: relative;">
+                                    <div aria-hidden="true" class="new__tag" style="display: none;">new</div>
+                                    <button class="navigation-bar__button button clearfix" data-title="模版">
+                                        <i class="mdi mdi-24px mdi-package-variant"></i>
+                                        模版
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div style="width: 100%;height: 20px;background: #6b6b6b;position: absolute;bottom: 0px;">
+                        <div class="stat-panel no-overflow">
+                            <div class="stat-panel__block stat-panel__block--left">
+                                <span class="stat-panel__block-name">Markdown编辑器</span>
+                                <span>总字数：<span class="words_nums">0</span></span>
+                                <span>总行数：<span class="line_nums">0</span></span>
+                                <span>当前行：<span class="now_row_count">0</span></span>
+                                <span>当前列：<span class="now_column_count">0</span></span>
+                            </div>
+                            <div class="stat-panel__block stat-panel__block--right">
+                                <span class="stat-panel__block-name">HTML预览</span>
+                                <span><span class="stat-panel__value">13</span> 字数</span>
+                                <span><span class="stat-panel__value">1</span> 段落</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layout__panel flex flex--row" style="height: 601px;">
+                    <!--编辑器-->
+                    <div class="layout__panel layout__panel--editor" style="width:755px; font-size: 16px;">
+                        <div id="editor" style="width: 100%;height: 100%"></div>
+                    </div>
+                    <!--中间工具栏-->
+                    <div class="layout__panel layout__panel--button-bar" style="width: 26px;">
+                        <div class="button-bar">
+                            <div class="button-bar__inner button-bar__inner--top">
+                                <button class="button-bar__button button-bar__button--navigation-bar-toggler button button-bar__button--on"
+                                        title="隐藏/显示顶部工具栏">
+                                    <i class="mdi mdi-18px mdi-debug-step-out"></i>
+                                </button>
+                                <button class="button-bar__button button-bar__button--side-preview-toggler button button-bar__button--on"
+                                        title="隐藏/显示右侧预览">
+                                    <i class="mdi mdi-18px mdi-mixer"></i>
+                                </button>
+                                <button class="button-bar__button button-bar__button--editor-toggler button"
+                                        title="预览">
+                                    <i class="mdi mdi-18px mdi-eye-outline"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--预览框-->
+                    <div class="layout__panel layout__panel--preview markdown_views">
+                        <div class="preview__inner-1">
+                            <div id="preview"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/marked.min.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/jquery-3.6.1.min.js" type="text/javascript"></script>
+<script src="js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/editor_app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

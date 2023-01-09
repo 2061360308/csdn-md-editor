@@ -1,0 +1,159 @@
+.navigation-bar__button_box .mdi {
+    position: absolute;top: 6px;
+}
+.uploadPicture{
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    width: 112px;
+    height: 38px;
+    margin: 0 auto;
+    background: #fc5531;
+    border-radius: 18px;
+    text-align: center;
+    line-height: 38px;
+    color: #fff;
+}
+#uploadPicture{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 112px;
+    height: 38px;
+    color:#fff;
+    opacity: 0;
+}
+#uploadPicture_div p{
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    text-align: center;
+}
+.btn-goback{
+    line-height: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #3c3c3c;
+    text-decoration: none;
+}
+
+.mandatory-sign{
+    color: #e33e33;
+}
+
+.publish_div .header div{
+    height: 36px;
+    line-height: 36px;
+    background: #fff6e5;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: #e33e33;
+    display: flex;
+    align-items: center;
+}
+.publish_div .cover-abstract .title{
+    color:#000000;
+    line-height: 48px;
+}
+
+.publish_div .cover-abstract .body .cover{
+    border: 2px dashed #8b95a5;
+}
+
+.publish_div .cover-abstract .body .cover:hover{
+    border-color: #b6f1fc;
+}
+
+.publish_div .cover-abstract .body .cover .pic-add{
+	display: -webkit-flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	font-family: "Material Design Icons";
+	font-size: 2.875rem;
+	color: #8b95a5;
+	-webkit-transition: .35s;
+	transition: .35s;
+}
+.publish_div .cover-abstract .body .cover .pic-add:hover{
+    color: #b6f1fc;
+}
+
+.publish_div .cover-abstract .body .cover .pic-show {
+    /*border: 2px dashed #8b95a5;*/
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.publish_div .cover-abstract .body .cover .pic-show .pic-show-img{
+    /*border: 2px dashed #8b95a5;*/
+    position: absolute;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+.publish_div .cover-abstract .body .cover .pic-show i{
+    /*border: 2px dashed #8b95a5;*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #000000;
+}
+
+.publish_div .cover-abstract .body .abstract{
+    width: 100%;
+    height: 100%;
+}
+
+.publish_div .cover-abstract .body .abstract textarea{
+    width: 100%;
+    height:100%;
+    resize: none;
+    min-height: 36px;
+    border: 1px solid #8b95a5;
+    padding: 8px 8px 0;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.publish_div .album .body .select .select-item,.add-new{
+    padding: 5px;
+    border: 1px solid #ebebeb;
+    cursor:pointer;
+}
+
+.publish_div .album .body .select .add-new{
+    background-color: #fc5531;
+    color: #fff;
+}
+
+.publish_div .album .body .all{
+    padding: 5px;
+    height: 100px;
+    border: 1px solid #8b95a5;
+    overflow: scroll;
+}
+
+.publish_div .album .body .all label{
+    display: block;
+}
+
+.publish_div .source-copyright .body .source{
+    padding: 8px;
+    height: 40px;
+}
+
+.publish_div .source-copyright .body .copyright{
+    padding: 5px;
+    height: 100px;
+    /*border: 1px solid #8b95a5;*/
+    overflow: scroll;
+}
+
+.publish_div .source-copyright .body .copyright label{
+    border: 1px solid #ebebeb;
+}
